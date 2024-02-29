@@ -1,18 +1,27 @@
 # Importing classes from shapes.py
-from shapes import Rectangle, Circle
+# create window Tkinter
+from tkinter import *
+import tkinter as tk
+import webbrowser
 
-# Function to print details of a shape
-def print_details(shape):
-    print("Area:", shape.area())
-    print("Perimeter:", shape.perimeter())
+Window = Tk()
+def main_button():
+ hello["text"] = "Button Clicked"
 
-# Instantiating objects of Rectangle and Circle
-rectangle = Rectangle(4, 6)
-circle = Circle(5)
+def callback():
+ webbrowser.open("http://www.google.com")
 
-# Demonstrate polymorphism by calling print_details() with instances of both Rectangle and Circle
-print("Details of Rectangle:")
-print_details(rectangle)
+Window.title('hello world')
+Window.geometry ("1920x1080")
+hello = tk.Label(text="Click The Button")
+hello.pack()
+button = tk.Button(text="Click Me", command=main_button)
+button.pack()
 
-print("\nDetails of Circle:")
-print_details(circle)
+label2 = tk.Label(text="Click to open google")
+label2.pack()
+
+button2 = tk.Button(text="Google", command=callback)
+button2.pack()
+
+tk.mainloop()
